@@ -36,9 +36,12 @@ URL:		http://www.qubes-os.org
 BuildRequires: gcc
 BuildRequires: pandoc
 
+%if 0%{?suse_version} == 1500 && 0%{?is_opensuse}
+Requires:	gpg2
+%else
 Requires:	gnupg2
-Requires:   zenity
-
+%endif
+Requires:	zenity
 
 Source0: %{name}-%{version}.tar.gz
 
