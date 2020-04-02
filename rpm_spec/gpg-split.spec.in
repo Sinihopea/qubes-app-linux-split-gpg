@@ -22,28 +22,27 @@
 #
 #
 
+Name:           qubes-gpg-split
+Version:        @VERSION@
+Release:        1%{dist}
+Summary:        The Qubes service for secure gpg separation
 
-Name:		qubes-gpg-split
-Version:	@VERSION@
-Release:	1%{dist}
-Summary:	The Qubes service for secure gpg separation
+Group:          Qubes
+Vendor:         Invisible Things Lab
+License:        GPL
+URL:            http://www.qubes-os.org
 
-Group:		Qubes
-Vendor:		Invisible Things Lab
-License:	GPL
-URL:		http://www.qubes-os.org
-
-BuildRequires: gcc
-BuildRequires: pandoc
+BuildRequires:  gcc
+BuildRequires:  pandoc
 
 %if 0%{?suse_version} == 1500 && 0%{?is_opensuse}
-Requires:	gpg2
+Requires:       gpg2
 %else
-Requires:	gnupg2
+Requires:       gnupg2
 %endif
-Requires:	zenity
+Requires:       zenity
 
-Source0: %{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 %description
 The Qubes service for delegating gpg actions to other VM. You can keep keys in
@@ -51,10 +50,10 @@ secure (even network isolated) VM and only pass data to it for
 signing/decryption.
 
 %package tests
-Summary:    Tests for Split GPG
-Requires:   %{name}
-Requires:   python3-dogtail
-Requires:   xdotool
+Summary:        Tests for Split GPG
+Requires:       %{name}
+Requires:       python3-dogtail
+Requires:       xdotool
 
 %description tests
 Helper scripts for Split GPG tests.

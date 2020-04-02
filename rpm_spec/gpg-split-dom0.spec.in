@@ -33,29 +33,28 @@
 %bcond_without python2
 %endif
 
+Name:           qubes-gpg-split-dom0
+Version:        @VERSION@
+Release:        1%{dist}
+Summary:        Qubes policy for gpg split
 
-Name:		qubes-gpg-split-dom0
-Version:	@VERSION@
-Release:	1%{dist}
-Summary:    Qubes policy for gpg split
+Group:          Qubes
+Vendor:         Invisible Things Lab
+License:        GPL
+URL:            http://www.qubes-os.org
 
-Group:		Qubes
-Vendor:		Invisible Things Lab
-License:	GPL
-URL:		http://www.qubes-os.org
-
-Requires:	gpg
+Requires:       gpg
 %if %{with python2}
-BuildRequires: python-setuptools
-BuildRequires: python2-rpm-macros
+BuildRequires:  python-setuptools
+BuildRequires:  python2-rpm-macros
 %endif
 %if %{with python3}
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
-BuildRequires: python3-devel
+BuildRequires:  python3-rpm-macros
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-devel
 %endif
 
-Source0: qubes-gpg-split-%{version}.tar.gz
+Source0:        qubes-gpg-split-%{version}.tar.gz
 
 %description
 
